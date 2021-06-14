@@ -144,7 +144,7 @@ class EmailInput extends StatelessWidget{
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(24.0)
               ),
-              // icon: const Icon(Icons.email),
+              icon: const Icon(Icons.email),
               labelText: 'Email/Username/Phone number',
               helperText: 'A complete, valid email/username/phone',
               errorText: state.email.invalid
