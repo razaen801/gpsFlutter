@@ -5,6 +5,8 @@ import 'package:my_gps_app/customColors.dart';
 class Constant{
   static final String appName="EZ2Track";
 
+  static final double appBarSize = 40.0;
+
   static final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       onPrimary: Color(int.parse(CustomColors.loginButtonColor)),
       primary: Color(int.parse(CustomColors.loginButtonColor)),

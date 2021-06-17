@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:my_gps_app/dashboard/botom_navigation.dart';
 
 class LoginPageNew extends StatefulWidget {
   const LoginPageNew({required Key key}) : super(key: key);
@@ -11,8 +13,6 @@ class LoginPageNew extends StatefulWidget {
 }
 
 class _LoginPageNewState extends State<LoginPageNew> {
-  late FocusNode focusNode;
-
   @override
   Widget build(BuildContext context) {
     TextEditingController nameController = TextEditingController();
@@ -29,14 +29,17 @@ class _LoginPageNewState extends State<LoginPageNew> {
           child:
           Column(
             children: [
-              SizedBox
-                (
-                height: 190,
-                  width: 190,
-                  child: Image.asset('assets/images/ic_logo.png')),
+              Container(
+                margin: EdgeInsets.only(top: 40),
+                child: SizedBox
+                  (
+                  height: 90,
+                    width: 90,
+                    child: Image.asset('assets/images/ic_logo.png')),
+              ),
 
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 30, 0, 8),
+              padding: const EdgeInsets.fromLTRB(0, 100, 0, 10),
               child: Text(
                 'Welcome to EZ to Track',
                 style: TextStyle(
@@ -63,6 +66,28 @@ class _LoginPageNewState extends State<LoginPageNew> {
 
                 ),
               ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: TextField(
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 30.0),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(24.0)
+                    ),
+                    icon: const Icon(Icons.lock),
+                    labelText: 'Password',
+                    helperText: 'Enter your password',
+                  ),
+                ),
+              ),
+              FlatButton(
+                onPressed: () {
+                  Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context)=> MyHomePage(key: ObjectKey("dashBoard"))));
+                },
+                child: Text("Login"),
+              )
+
             ],
           )
           ,

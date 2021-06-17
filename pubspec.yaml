@@ -36,6 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^1.1.7+1
   adobe_xd: ^2.0.0+1
+  google_maps_flutter: ^2.0.6
+  http: ^0.13.1
+  json_serializable: ^4.1.0
+
 
 dev_dependencies:
   flutter_test:

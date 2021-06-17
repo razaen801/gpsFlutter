@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_gps_app/dashboard/dashboard_home.dart';
+import 'package:my_gps_app/dashboard/dashboard_list.dart';
+import 'package:my_gps_app/dashboard/dashboard_map.dart';
+import 'package:my_gps_app/dashboard/dashboard_other.dart';
+import 'package:my_gps_app/dashboard/dashboard_recent.dart';
 //
 // void main(){
 //   runApp(MyApp());
@@ -14,6 +19,8 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
+
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({ required Key key}) : super(key: key);
 
@@ -23,21 +30,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final DashBoardHome dashBoardHome = new DashBoardHome();
+  final DashBoardMap dashBoardMap = new DashBoardMap();
+  final DashBoardList dashBoardList = new DashBoardList();
+  final DashBoardRecent dashBoardRecent = new DashBoardRecent();
+  final DashBoardOther dashBoardOther = new DashBoardOther();
+
+  int _pageIndex = 0;
+  Widget _showPage = new DashBoardHome();
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(
       fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Home',
-        style: optionStyle),
-    Text('Map',
-        style: optionStyle),
-    Text('List',
-        style: optionStyle),
-    Text('Report',
-        style: optionStyle),
-    Text('Others',
-        style: optionStyle),
-  ];
+
 
 void _onItemTapped(int index){
   setState(() {
@@ -45,16 +50,58 @@ void _onItemTapped(int index){
   });
 }
 
+  Widget _pageChooser(int page) {
+    switch (page) {
+      case 0:
+        return _showPage;
+        break;
+      case 1:
+        return dashBoardMap;
+        break;
+
+      case 2:
+        return dashBoardList;
+        break;
+
+      case 3:
+        return dashBoardRecent;
+        break;
+
+      case 4:
+        return dashBoardOther;
+        break;
+
+      default:
+        return new Container(
+          child: Center(
+            child: Text(
+              "Page not found",
+              style: TextStyle(fontSize: 30),
+            ),
+          ),
+        );
+
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("NAV BAR TITLE"),
-      ),
-      body: Center(
-        child: _widgetOptions. elementAt(_selectedIndex),
+      body: Container(
+        child: _showPage,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
+        currentIndex: _pageIndex,
+        selectedItemColor: Colors.red,
+        unselectedItemColor: Colors.blueGrey,
+        onTap: (int tappedIndex) {
+          setState(() {
+            _showPage = _pageChooser(tappedIndex);
+            _pageIndex = tappedIndex;
+          });
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -70,12 +117,9 @@ void _onItemTapped(int index){
               label: "Report"),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle),
-              label: "others"),
+              label: "Others"),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.white,
-        onTap: _onItemTapped,
+
       ),
     );
   }

@@ -3,7 +3,11 @@
    <application
         android:label="my_gps_app"
         android:icon="@mipmap/ic_launcher">
-        <activity
+
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDlUKf-6_6SMNkyJTm7GvbIA49csq2aN1A"/>
+
+       <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
