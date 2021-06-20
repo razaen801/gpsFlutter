@@ -14,7 +14,7 @@ class _DashBoardMapState extends State<DashBoardMap> {
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962), //longlat
+    target: LatLng(27.693038, 85.281412), //longlatlla
     zoom: 14.4746,
   );
 

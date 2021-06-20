@@ -10,15 +10,29 @@ class DashBoardOther extends StatefulWidget {
 class _DashBoardOtherState extends State<DashBoardOther> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width/100;
+    double height = MediaQuery.of(context).size.height/100;
     return Scaffold(
         appBar: AppBar(
           title: AppBarTitle(),
           backgroundColor: Colors.white,
-
         ),
         body: Container(
+          child: SingleChildScrollView(
+            child: Row(
+              children: [
+                Container(
+                  // decoration:,
+                  child: Column(
+                    children: [
+                    ],
+                  ),
+                )
+              ],
+            ),
 
-        )
+          ),
+        ),
     );
   }
 }
