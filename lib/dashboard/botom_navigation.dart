@@ -53,7 +53,7 @@ void _onItemTapped(int index){
   Widget _pageChooser(int page) {
     switch (page) {
       case 0:
-        return _showPage;
+        return dashBoardHome;
         break;
       case 1:
         return dashBoardMap;
@@ -116,7 +116,7 @@ void _onItemTapped(int index){
               icon: Icon(Icons.assignment),
               label: "Report"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
+              icon: Icon(Icons.more_horiz_sharp),
               label: "Others"),
         ],
 

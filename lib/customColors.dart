@@ -9,6 +9,7 @@ class CustomColors{
   static const kPrimaryColor = Color(0xFF336E9B);
   static const kAccentColor = Color(0xFF3676A7);
   static const kButtonColor = Color(0xFF041167);
+  static const kSecondaryButtonColor = Color(0xFF001160);
 
   static const iconColor = Colors.black45;
   static const statusBar = Colors.grey;
