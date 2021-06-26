@@ -6,6 +6,14 @@ import 'package:my_gps_app/customColors.dart';
 class AppBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width / 100;
+    double height = MediaQuery
+        .of(context)
+        .size
+        .height / 100;
     return Container(
       color: Colors.white,
 

@@ -13,6 +13,7 @@ class SplashScreenView extends StatefulWidget{
 }
 
 class _SplashScreenState extends State<SplashScreenView>{
+
   @override
   void initState() {
     // TODO: implement initState
@@ -24,17 +25,27 @@ class _SplashScreenState extends State<SplashScreenView>{
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width/100;
+    double height= MediaQuery.of(context).size.height/100;
     // TODO: implement build
     return Scaffold(
       body: SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: Center(
-            child: Image.asset("assets/images/background.png",
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.fill),
+          decoration: BoxDecoration(
+            // color: const Color(0xff3676a7),
+            image: DecorationImage(
+              image: AssetImage("assets/images/splash_back.png"),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Image.asset("assets/images/main_logo.png",
+            // width: double.infinity,
+            // height: double.infinity,
+            ),
           ),
         ),
       ),
