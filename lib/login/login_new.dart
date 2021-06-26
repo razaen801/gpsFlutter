@@ -261,7 +261,7 @@ class _LoginPageNewState extends State<LoginPageNew> {
                               "Powered By @                       ",
                               style: TextStyle
                                 (
-                                color: CustomColors.kPrimaryColor,
+                                color: CustomColors.kButtonColor,
                                 fontSize: 18
                               ),
                             ),

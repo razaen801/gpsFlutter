@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_gps_app/customColors.dart';
 import 'package:my_gps_app/toolbar/toolbar_home.dart';
 
 class DashBoardHome extends StatefulWidget {
@@ -78,78 +79,94 @@ class _DashBoardHomeState extends State<DashBoardHome> {
                 ),
               ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: width*15,
-                    height: height*10,
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        shape: BoxShape.circle
-                    ),
-                    child: SizedBox(
-                      width: width*12,
-                      height: height*8,
-                      child: Icon(
-                        Icons.car_repair,
-                        color: Colors.white,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(15,0,15,0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: width*15,
+                      height: height*10,
+                      decoration: BoxDecoration(
+                          color: CustomColors.app_red,
+                          shape: BoxShape.circle
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: FittedBox(
+                          child: Image.asset('assets/images/dash_car.png'
+                          ),
+                          fit: BoxFit.fitWidth,
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    width: width*15,
-                    height: height*10,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        shape: BoxShape.circle
+                    Container(
+                      width: width*15,
+                      height: height*10,
+                      decoration: BoxDecoration(
+                          color: CustomColors.app_green,
+                          shape: BoxShape.circle
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: FittedBox(
+                          child: Image.asset('assets/images/dash_scooter.png'
+                          ),
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
                     ),
-                    child: Icon(
-                        Icons.bike_scooter,
-                      color: Colors.white,
+                    Container(
+                      width: width*15,
+                      height: height*10,
+                      decoration: BoxDecoration(
+                          color: CustomColors.app_deep_blue,
+                          shape: BoxShape.circle
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: FittedBox(
+                          child: Image.asset('assets/images/dash_bus.png'
+                          ),
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: width*15,
-                    height: height*10,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        shape: BoxShape.circle
+                    Container(
+                      width: width*15,
+                      height: height*10,
+                      decoration: BoxDecoration(
+                          color: CustomColors.app_pink,
+                          shape: BoxShape.circle
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: FittedBox(
+                          child: Image.asset('assets/images/dash_truck.png'
+                          ),
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
                     ),
-                    child: Icon(
-                      Icons.directions_bus,
-                      color: Colors.white,
+                    Container(
+                      width: width*15,
+                      height: height*10,
+                      decoration: BoxDecoration(
+                          color: CustomColors.app_dark_green,
+                          shape: BoxShape.circle
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: FittedBox(
+                          child: Image.asset('assets/images/dash_jeep.png'
+                          ),
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ),
                     ),
-                  ),
 
-                  Container(
-                    width: width*15,
-                    height: height*10,
-                    decoration: BoxDecoration(
-                        color: Colors.purpleAccent,
-                        shape: BoxShape.circle
-                    ),
-                    child: Icon(
-                      Icons.bus_alert,
-                      color: Colors.white,
-                    ),
-                  ),
-
-                  Container(
-                    width: width*15,
-                    height: height*10,
-                    decoration: BoxDecoration(
-                        color: Colors.orangeAccent,
-                        shape: BoxShape.circle
-                    ),
-                    child: Icon(
-                      Icons.electric_car_outlined,
-                      color: Colors.white,
-                    ),
-                  ),
-
-
-                ],
+                  ],
+                ),
               )
             ],
           ),

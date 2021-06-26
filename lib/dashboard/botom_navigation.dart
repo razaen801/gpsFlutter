@@ -115,9 +115,9 @@ void _onItemTapped(int index){
           BottomNavigationBarItem(
               icon: Icon(Icons.assignment),
               label: "Report"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.more_horiz_sharp),
-              label: "Others"),
+          // BottomNavigationBarItem(
+          //     icon: Icon(Icons.more_horiz_sharp),
+          //     label: "Others"),
         ],
 
       ),

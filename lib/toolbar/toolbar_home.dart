@@ -24,36 +24,39 @@ class AppBarTitle extends StatelessWidget {
           SizedBox(
             height: Constant.appBarSize,
               width: Constant.appBarSize,
-              child: Image.asset('assets/images/ic_logo.png')),
+              child: Image.asset('assets/images/dash_logo.png')),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: Constant.appBarSize,
-                width: Constant.appBarSize,
-                child: Icon(
-                  Icons.search,
-                  color: CustomColors.iconColor,
-                )
-              ),
-              Container(
-                height: Constant.appBarSize,
-                width: Constant.appBarSize,
-                child: Icon(
-                  Icons.notifications_on_outlined,
-                  color: CustomColors.iconColor,
-                )
-              ),
-              Container(
-                height: Constant.appBarSize,
-                width: Constant.appBarSize,
-                child: Icon(
-                  Icons.account_circle,
-                  color: CustomColors.iconColor,
-                )
-              ),
-            ],
+          Container(
+            width: width*40,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween                                                           ,
+              children: [
+                Container(
+                  height: Constant.appBarSize,
+                  width: Constant.appBarSize,
+                  child: Icon(
+                    Icons.search,
+                    color: CustomColors.iconColor,
+                  )
+                ),
+                Container(
+                  height: Constant.appBarSize,
+                  width: Constant.appBarSize,
+                  child: Icon(
+                    Icons.notifications_on_outlined,
+                    color: CustomColors.iconColor,
+                  )
+                ),
+                Container(
+                  height: Constant.appBarSize,
+                  width: Constant.appBarSize,
+                  child: Icon(
+                    Icons.account_circle,
+                    color: CustomColors.iconColor,
+                  )
+                ),
+              ],
+            ),
           )
         ],
       ),

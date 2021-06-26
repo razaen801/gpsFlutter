@@ -2,11 +2,13 @@ import 'package:flutter/cupertino.dart';
 
 class MenuItem{
   String title;
-  String Icon;
+  String iconLocation;
+  Color color;
 
   MenuItem({
     required this.title,
-    required this.Icon
+    required this.iconLocation,
+    required this.color
 });
 
 }
