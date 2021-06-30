@@ -26,6 +26,8 @@ class _DashBoardHomeState extends State<DashBoardHome> {
       backgroundColor: Colors.white,
         appBar: AppBar(
           title: AppBarTitle(),
+          automaticallyImplyLeading: false,
+
           backgroundColor: Colors.white,
         ),
         body: SingleChildScrollView(

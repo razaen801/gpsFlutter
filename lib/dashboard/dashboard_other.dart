@@ -17,6 +17,8 @@ class _DashBoardOtherState extends State<DashBoardOther> {
         appBar: AppBar(
           title: AppBarTitle(),
           backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+
         ),
         body: Container(
           child: SingleChildScrollView(

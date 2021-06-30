@@ -20,6 +20,14 @@ class _LoginPageNewState extends State<LoginPageNew> {
   late TextEditingController passwordController;
   bool _validate = false;
   bool _validateUser = false;
+  bool _passwordVisible = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _passwordVisible = false;
+  }
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery
@@ -82,6 +90,14 @@ class _LoginPageNewState extends State<LoginPageNew> {
                       controller: nameController,
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.only(left: 30.0),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(24.0),
+                          borderSide: BorderSide(color: CustomColors.kButtonColor)
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(24.0),
+                            // borderSide: BorderSide(color: CustomColors.kButtonColor)
+                        ),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24.0),
                         ),
@@ -107,8 +123,28 @@ class _LoginPageNewState extends State<LoginPageNew> {
                     padding: EdgeInsets.all(10),
                     child: TextField(
                       controller: passwordController,
+                      // obscureText: !_passwordVisible,
                       decoration: InputDecoration(
+                        // suffixIcon: IconButton(
+                        //   icon: Icon(
+                        //     // Based on passwordVisible state choose the icon
+                        //     _passwordVisible
+                        //         ? Icons.visibility
+                        //         : Icons.visibility_off,
+                        //     color: Theme.of(context).primaryColorDark,
+                        //   ),
+                        //   onPressed: () {
+                        //     // Update the state i.e. toogle the state of passwordVisible variable
+                        //     setState(() {
+                        //       _passwordVisible = !_passwordVisible;
+                        //     });
+                        //   },
+                        // ),
                         contentPadding: EdgeInsets.only(left: 30.0),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(24.0),
+                            borderSide: BorderSide(color: CustomColors.kButtonColor)
+                        ),
                         border: OutlineInputBorder(
                           borderSide: new BorderSide(color: Colors.white),
                             // borderSide: new BorderSide(color: Colors.white)),

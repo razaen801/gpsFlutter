@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_gps_app/iDash/main_panel.dart';
 import 'package:my_gps_app/login.dart';
 import 'package:my_gps_app/login/loginPage.dart';
 import 'package:my_gps_app/login/login_new.dart';
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreenView>{
     super.initState();
     Timer(Duration(seconds: 2),
     ()=> Navigator.of(context).pushReplacement(MaterialPageRoute(
-    builder: (BuildContext context) =>LoginPageNew(key: ObjectKey("login"),))));
+    builder: (BuildContext context) =>PanelMain())));
   }
 
   @override

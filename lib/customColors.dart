@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomColors{
   static String colorPrimary = _getColorFromHex('#336e9b');
   static String colorSecondary = _getColorFromHex('#3676a7');
-  static String loginButtonColor = _getColorFromHex('#041167');
+  static String loginButtonColor = _getColorFromHex('#EB5C20');
 
   // static const kPrimaryColor = Color(0xFFEB5C20);
   // static const kAccentColor = Color(0xFFEB5C20);
@@ -13,7 +13,7 @@ class CustomColors{
   static const kSecondaryButtonColor = Color(0xFFEB5C20);
   static const kPrimaryTextColor = Color(0xFF575759);
   static const kBoxBorderColor = Color(0xFFC4C4C4);
-  static const kBoxBackgroundColor = Color(0xFFD0D0D0);
+  static const kBoxBackgroundColor = Color(0xFFF1EFEF);
   static const app_red  = Color(0xFF9F0505);
   static const app_light_red  = Color(0xFFDC0E0E);
   static const app_green  = Color(0xFF059F1A);

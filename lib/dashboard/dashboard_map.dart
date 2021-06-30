@@ -30,6 +30,7 @@ class _DashBoardMapState extends State<DashBoardMap> {
         appBar: AppBar(
           title: AppBarTitle(),
           backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
 
         ),
         body:GoogleMap(
