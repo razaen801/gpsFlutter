@@ -36,9 +36,11 @@ class AppBarTitle extends StatelessWidget {
                   return Align(
                     alignment: Alignment.topLeft,
                     child: Container(
-                      height: height*68,
+                      height: height*75,
                       width: width*80,
-                      child: SizedBox.expand(child: DialogLeading()),
+                      child: SizedBox.expand(child: DialogLeading(onClick: (){
+
+                      },)),
                       margin: EdgeInsets.only(bottom: 50, left: 12, right: 12),
                       decoration: BoxDecoration(
                         color: CustomColors.kBoxBackgroundColor,

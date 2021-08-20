@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_gps_app/constants.dart';
 import 'package:my_gps_app/login/bloc/login_bloc.dart';
 import 'package:flutter/foundation.dart';
+import 'package:my_gps_app/server_handler/login/login_repository.dart';
 import 'package:provider/provider.dart';
 // ffr45ignore: import_of_legacy_library_into_null_safe
 import 'package:formz/formz.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           body: BlocProvider(
-            create: (_) => LoginBloc(),
+            create: (_) => LoginBloc(repository: LoginRepository()),
             child: MyForm(),
           ),
         ),
@@ -224,7 +225,7 @@ class SubmitButton extends StatelessWidget {
             style:Constant.buttonStyle,
             // style: Constant.buttonStyle,
             onPressed: state.status.isValidated
-                ? () => context.read<LoginBloc>().add(FormSubmitted())
+                ? () => context.read<LoginBloc>().add(FormSubmitted(email: "",password: ""))
                 : null,
             child: const Text('Submit'),
           ),

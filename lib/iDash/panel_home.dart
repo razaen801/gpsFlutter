@@ -4,6 +4,10 @@ import 'package:flutter/painting.dart';
 import 'package:my_gps_app/customColors.dart';
 import 'package:my_gps_app/dashboard/botom_navigation.dart';
 import 'package:my_gps_app/iDash/appBar/panel_primary_title.dart';
+import 'package:my_gps_app/iDash/panel_gps.dart';
+import 'package:my_gps_app/iDash/panic/submit_form_with_map.dart';
+import 'package:my_gps_app/iDash/panic/submit_panic_fomr.dart';
+import 'package:my_gps_app/iDash/addGps/panel_add_gps_device.dart';
 import 'package:my_gps_app/iDash/widgets/panel_home_icon.dart';
 import 'package:my_gps_app/login/login_new.dart';
 import 'package:my_gps_app/models/menu_item.dart';
@@ -15,7 +19,7 @@ class PanelHome extends StatefulWidget {
 }
 class _PanelHomeState extends State<PanelHome> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
 
     List<MenuItem> menuItems = [];
     menuItems.add(new MenuItem(title: "Ambulance", iconLocation: 'assets/images/panel_ambulance.png', color: CustomColors.kPanelBack,icon: Icon(Icons.speed),isIcon: false));
@@ -46,7 +50,8 @@ class _PanelHomeState extends State<PanelHome> {
             fit: BoxFit.fill,
           ),
         ),
-        child: ListView(
+        child:
+        ListView(
           physics: ScrollPhysics(),
           children: [
             AppbarPrimary(isSecondary: false,),
@@ -66,7 +71,7 @@ class _PanelHomeState extends State<PanelHome> {
                     value: menuItems[i],
                     child: MaterialButton(
                       onPressed: (){
-                        onClickedItem(i);
+                        onClickedItem(menuItems[i]);
                       } ,
                         child: PanelHomeIcon(),
                         // Container(
@@ -115,10 +120,20 @@ class _PanelHomeState extends State<PanelHome> {
     );
   }
 
-  onClickedItem(int i) {
-    if(i==8){
-      Navigator.push(context, new MaterialPageRoute(builder: (context)=> LoginPageNew(key: ObjectKey("login"))));
+  onClickedItem(MenuItem menuItem) {
+    if(menuItem.title=="GPS"){
+      Navigator.push(context, new MaterialPageRoute(
+          builder: (context) => PanelAddGpsDevice()));
     }
+    else {
+      Navigator.push(context, new MaterialPageRoute(
+          builder: (context) => PanicMapForm(type: menuItem,)));
+    }
+
+
+    // if(i==8){
+    //   Navigator.push(context, new MaterialPageRoute(builder: (context)=> LoginPageNew(key: ObjectKey("login"))));
+    // }
     // switch(i) {
     //   case 8:
     //     Navigator.push(context, new MaterialPageRoute(builder: (context)=> LoginPageNew(key: ObjectKey("login"))));

@@ -54,7 +54,8 @@ class _PanelSosState extends State<PanelSos> {
                     itemBuilder: (ctx,position){
                       return ChangeNotifierProvider.value(
                         value: menuItems[position],
-                        child: PanelSosList(),);
+                        child: PanelSosList(),
+                      );
                     }
                 ),
               ),

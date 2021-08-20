@@ -1,11 +1,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.rspackage.my_gps_app">
+
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+
    <application
         android:label="my_gps_app"
-        android:icon="@mipmap/ic_launcher">
+       android:usesCleartextTraffic="true"
+        android:icon="@mipmap/ic_launcher"
+       tools:targetApi="m">
 
-       <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyDlUKf-6_6SMNkyJTm7GvbIA49csq2aN1A"/>
+
 
        <activity
             android:name=".MainActivity"
@@ -14,6 +25,9 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
+
+
+
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
                  while the Flutter UI initializes. After that, this theme continues
@@ -36,6 +50,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDjhKwD2lrnz1km0Jd1gbsKtmzrEEwdsEs"/>
+
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

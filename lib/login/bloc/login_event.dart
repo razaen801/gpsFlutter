@@ -33,5 +33,23 @@ class PasswordChanged extends LoginEvent{
 
 class PasswordUnfocused extends LoginEvent{}
 
-class FormSubmitted extends LoginEvent{}
+class FormSubmitted extends LoginEvent{
+
+  final String email;
+  final String password;
+
+  FormSubmitted({required this.password,required this.email});
+}
+
+class RegisterFormSubmitted extends LoginEvent{
+  final String email;
+  final String password;
+  final String serial_number;
+  final String ime_number;
+  final String sim_number;
+  final String device_model;
+
+  RegisterFormSubmitted({required this.email, required this.password, required this.serial_number,
+      required this.ime_number, required this.sim_number, required this.device_model});
+}
 

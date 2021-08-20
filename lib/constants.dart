@@ -6,6 +6,9 @@ class Constant{
   static final String appName="EZ2Track";
 
   static final double appBarSize = 40.0;
+  static final String baseUrl = "http://202.51.74.204/";
+
+
 
   static final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       // onPrimary: CustomColors.kButtonColor,
