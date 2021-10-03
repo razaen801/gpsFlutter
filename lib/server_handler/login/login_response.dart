@@ -1,5 +1,6 @@
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:my_gps_app/server_handler/login/login_user_details.dart';
 
 part 'login_response.g.dart';
 
@@ -8,8 +9,9 @@ part 'login_response.g.dart';
 class LoginResponse {
   String status;
   String token;
+  LoginUserDetails user;
 
-  LoginResponse({required this.status, required this.token});
+  LoginResponse({required this.status, required this.token,required this.user});
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) => _$LoginResponseFromJson(json);
   // {

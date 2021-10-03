@@ -74,42 +74,6 @@ class _PanelHomeState extends State<PanelHome> {
                         onClickedItem(menuItems[i]);
                       } ,
                         child: PanelHomeIcon(),
-                        // Container(
-                        //   child: Column(
-                        //     mainAxisAlignment: MainAxisAlignment.start,
-                        //     children: [
-                        //       Container(
-                        //         decoration: BoxDecoration(
-                        //             shape: BoxShape.circle,
-                        //             color: menuItems[i].color
-                        //         ),
-                        //         height: height*12,
-                        //         width: width*20,
-                        //         child: Padding(
-                        //           padding: const EdgeInsets.all(18.0),
-                        //           child: FittedBox(
-                        //             child: Image.asset(menuItems[i].iconLocation),
-                        //             fit: BoxFit.contain,
-                        //           ),
-                        //         ),
-                        //       ),
-                        //       Padding(
-                        //         padding: const EdgeInsets.all(8.0),
-                        //         child: Container(
-                        //           decoration: BoxDecoration(
-                        //               shape: BoxShape.rectangle,
-                        //               borderRadius: BorderRadius.all(Radius.circular(5)),
-                        //               color: Colors.white
-                        //           ),
-                        //           child: Padding(
-                        //             padding: const EdgeInsets.fromLTRB(14.0,5,14,5),
-                        //             child: Text(menuItems[i].title),
-                        //           ),
-                        //         ),
-                        //       )
-                        //     ],
-                        //   ),
-                        // ),
                     ),
                   );
                 }
@@ -127,7 +91,7 @@ class _PanelHomeState extends State<PanelHome> {
     }
     else {
       Navigator.push(context, new MaterialPageRoute(
-          builder: (context) => PanicMapForm(type: menuItem,)));
+          builder: (context) => PanicWithMap(type: menuItem,)));
     }
 
 

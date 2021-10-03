@@ -11,6 +11,7 @@ class CustomColors{
   static const kButtonColor = Color(0xFFEB5C20);
   static const kPanelBack = Color(0xFFEC5A1E);
   static const kSecondaryButtonColor = Color(0xFFEB5C20);
+  static const KSecondaryColor = Color(0xFF54545b);
   static const kPrimaryTextColor = Color(0xFF575759);
   static const kBoxBorderColor = Color(0xFFC4C4C4);
   static const kBoxBackgroundColor = Color(0xFFF1EFEF);

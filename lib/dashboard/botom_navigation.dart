@@ -37,6 +37,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+
   Location location = new Location();
   late PermissionStatus _permissionGranted;
   late LocationData _locationData;
@@ -228,45 +230,70 @@ void _onItemTapped(int index){
 
   }
 
+  Future<bool> _onWillPop() async{
+    return (await showDialog(
+      context: context,
+      builder: (context) => new AlertDialog(
+        title: new Text('Are you sure?'),
+        content: new Text('Do you want to log out?'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: new Text('No'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: new Text('Yes'),
+          ),
+        ],
+      ),
+    )) ?? false;
+  }
+
   @override
   Widget build(BuildContext context) {
     getLocationAndSendToServer();
-    return Scaffold(
-      body: Container(
-        child: _showPage,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.shifting,
-        currentIndex: _pageIndex,
-        selectedItemColor: Colors.red,
-        unselectedItemColor: Colors.blueGrey,
-        onTap: (int tappedIndex) {
-          setState(() {
-            _showPage = _pageChooser(tappedIndex);
-            _pageIndex = tappedIndex;
-          });
-        },
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-          label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.location_on),
-              label: "Map"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              label: "List"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.assignment),
-              label: "Report"),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.more_horiz_sharp),
-          //     label: "Others"),
-        ],
+    return new WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        body: Container(
+          child: _showPage,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.shifting,
+          currentIndex: _pageIndex,
+          selectedItemColor: Colors.red,
+          unselectedItemColor: Colors.blueGrey,
+          onTap: (int tappedIndex) {
+            setState(() {
+              _showPage = _pageChooser(tappedIndex);
+              _pageIndex = tappedIndex;
+            });
+          },
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+            label: "Home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.location_on),
+                label: "Map"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.list),
+                label: "List"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.assignment),
+                label: "Report"),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.more_horiz_sharp),
+            //     label: "Others"),
+          ],
 
+        ),
       ),
     );
   }
+
+
 
 
 }

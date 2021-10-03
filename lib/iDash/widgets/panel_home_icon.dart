@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_gps_app/models/menu_item.dart';
@@ -40,7 +41,7 @@ class PanelHomeIcon extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(5.0),
             child: Container(
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
@@ -48,9 +49,10 @@ class PanelHomeIcon extends StatelessWidget {
                   color: Colors.white
               ),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(14.0,5,14,5),
-                child: Text(menuItem.title,
+                padding: const EdgeInsets.fromLTRB(10,4,10,4),
+                child: AutoSizeText(menuItem.title,
                   maxLines: 1,
+                  minFontSize: 9,
                   style: TextStyle(
                   fontSize: 11,
                 ),),

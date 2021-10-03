@@ -5,8 +5,6 @@ part 'location_detail.g.dart';
 
 @JsonSerializable()
 class LocationDetail extends Equatable{
-  @JsonKey(name: "created_at")
-  final DateTime createdAt;
 
   @JsonKey(name: 'id')
   final int id;
@@ -15,17 +13,17 @@ class LocationDetail extends Equatable{
   final String name;
 
   @JsonKey(name: 'lng')
-  final double lng;
+  final String lng;
 
   @JsonKey(name: 'lat')
-  final double lat;
+  final String lat;
 
-  LocationDetail(this.createdAt, this.id, this.name, this.lng, this.lat);
+
+  LocationDetail(this.id, this.name, this.lng, this.lat);
 
   @override
   // TODO: implement props
   List<Object?> get props => [
-    createdAt,
     id,
     name,
     lng,

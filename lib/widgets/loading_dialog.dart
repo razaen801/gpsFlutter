@@ -19,12 +19,17 @@ class LoadingDialog extends StatelessWidget {
       onWillPop: () async => false,
       child: Center(
         child: Card(
-          child: Container(
-            color: Colors.transparent,
-            width: 80,
-            height: 80,
-            padding: EdgeInsets.all(12.0),
-            child: CircularProgressIndicator(),
+          child: GestureDetector(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Container(
+              color: Colors.transparent,
+              width: 80,
+              height: 80,
+              padding: EdgeInsets.all(12.0),
+              child: CircularProgressIndicator(),
+            ),
           ),
         ),
       ),

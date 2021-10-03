@@ -7,6 +7,19 @@ class RaSharedPreferenceConfig{
   static String searchingForGPS = "SEARCHING_FOR_GPS";
   static String selectedDevice = "selected_device_id";
   static String selectedDeviceName = "selected_device_name";
+  static String userDetails = "user_details";
+  static String userId = "user_id";
+
+
+  static setUserDetails(userDetail) async{
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setString(userDetails, userDetail);
+  }
+  static getUserDetails() async{
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    return  preferences.getString(userDetails);
+  }
+
 
   static setToken(token) async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();

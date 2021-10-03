@@ -8,6 +8,27 @@ class DialogUtils {
 
   factory DialogUtils() => _instance;
 
+  static void showInfoDialog(BuildContext context, {required String title,
+    required String content,
+    required VoidCallback okBtnFunction}){
+    showDialog(
+        context: context,
+        builder: (_) {
+          return AlertDialog(
+            title: Text(title),
+            content: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(content),
+            ),
+            actions: <Widget>[
+            FlatButton(
+                  child: Text("Ok"),
+                  onPressed: () => Navigator.pop(context))
+            ],
+          );
+        });
+  }
+
   static void showCustomDialog(BuildContext context,
       {required String title,
         required String content,

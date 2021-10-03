@@ -10,6 +10,7 @@ import 'package:meta/meta.dart';
 import 'package:my_gps_app/login/model/email.dart';
 import 'package:my_gps_app/login/model/password.dart';
 import 'package:my_gps_app/server_handler/login/login_data_source.dart';
+import 'package:my_gps_app/server_handler/login/login_user_details.dart';
 import 'package:my_gps_app/utility/shared_preferences_helper.dart';
 
 part 'login_event.dart';
@@ -68,6 +69,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
                 await RaSharedPreferenceConfig.setToken(login.token);
                 await RaSharedPreferenceConfig.setDeviceId(-1);
                 await RaSharedPreferenceConfig.setDeviceName("No device ");
+                int id = login.user.id;
+                String idd= id.toString();
+                await RaSharedPreferenceConfig.setUserDetails(idd);
                 yield LoginSuccess();
               }
       } on DioError catch(e){

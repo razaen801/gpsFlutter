@@ -55,6 +55,8 @@ class _LoginPageNewState extends State<LoginPageNew> {
     // TODO: implement initState
     super.initState();
     _passwordVisible = false;
+    nameController.text="info@superadmin.com";
+    passwordController.text="admin@12";
 
     // _emailFocusNode.addListener(() {
     //   if (!_emailFocusNode.hasFocus) {
@@ -212,6 +214,7 @@ class _LoginPageNewState extends State<LoginPageNew> {
                             // initialValue: state.password.value,
                             // focusNode: _passwordFocusNode,
                             controller: passwordController,
+
                             // obscureText: !_passwordVisible,
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 30.0),

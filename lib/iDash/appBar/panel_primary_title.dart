@@ -41,7 +41,7 @@ class _AppbarPrimaryState extends State<AppbarPrimary> {
                   return Align(
                     alignment: Alignment.topLeft,
                     child: Container(
-                      height: height*15,
+                      height: height*18,
                       width: width*45,
                       child: SizedBox.expand(child: DialogPanelLeading()),
                       margin: EdgeInsets.only(bottom: 50, left: 12, right: 12),

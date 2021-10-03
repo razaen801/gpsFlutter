@@ -44,6 +44,7 @@ class _DashBoardMapState extends State<DashBoardMap> {
   bool isDeviceSelected = false;
 
   void setGpsLocations(List<GpsLocationDetail> locationDetails){
+    allGpsLocationDetails.clear();
     allGpsLocationDetails.addAll(locationDetails);
   }
 
@@ -75,8 +76,8 @@ class _DashBoardMapState extends State<DashBoardMap> {
           title: "${locationDetail.name}",
         ),
         position: LatLng(
-            locationDetail.lat, locationDetail.lng),
-            // double.parse(locationDetail.lat), double.parse(locationDetail.lng)),
+            // locationDetail.lat, locationDetail.lng),
+            double.parse(locationDetail.lat), double.parse(locationDetail.lng)),
       );
 
       markers.add(resultMarker);

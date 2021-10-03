@@ -38,7 +38,7 @@ class GoogleMapBloc extends Bloc<GoogleMapEvent, GoogleMapState> {
         }
       }
       on DioError catch(e){
-        print('requesting map locations failed');
+        print('requesting map locations failed $e');
 
         if (e.type == DioErrorType.connectTimeout ||
             e.type == DioErrorType.receiveTimeout) {
@@ -71,7 +71,7 @@ class GoogleMapBloc extends Bloc<GoogleMapEvent, GoogleMapState> {
         }
       }
       on DioError catch(e){
-        print('requesting device failed');
+        print('requesting device failed $e');
         if (e.type == DioErrorType.connectTimeout ||
             e.type == DioErrorType.receiveTimeout) {
           yield GpsFetchError("Connection Error");
